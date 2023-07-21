@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+@font-face {
+    font-family: 'Cash Display Medium';
+    src: url('/fonts/ClashDisplay-Medium.otf');
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cash Display Medium';
+}
+
+span {
+    font-family: 'Inter', sans-serif;
+}
+
+p {
+    font-family: 'Inter', sans-serif;
+    color: #848296;
+}
+
+
+
+.section-banner-one {
+    position: relative;
+    background-image: url('/image/krvjbrv.png');
+    background-size: cover;
+    background-position: center;
+    padding: 15rem 0;
+}
+
+.section-banner-one span{
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 6px;
+    color: #9575DE;
+}
+
+.section-banner-one h1{
+    font-size: 60px;
+    line-height: 1.2em;
+    color: white;
+}
+
+.section-banner-one p{
+    font-size: 18px;
+
+}
+
+.image-absolute {
+    position: absolute;
+    bottom: 0;
+}
+
+@media only screen and (max-width: 767px){
+    .section-banner-one {
+        padding: 3rem 1rem;
+    }
+
+    .section-banner-one h1{
+        font-size: 35px;
+    }
+
+    .grid-custom-reverse {
+        display: grid;
+        grid-template-areas:
+            "positionB"
+            "positionA"
+        ;
+    }
+
+    .image-absolute {
+        position: unset;
+        grid-area: positionB;
+    }
+
+    .content-section-one {
+        margin-top: 1rem;
+        grid-area: positionA;
+    }
+}
+
+
+.section-three {
+    margin-top: -5rem;
+    padding: 10rem 0;
+    background-image: url('/image/blob-scene-haikei.svg');
+    background-size: cover;
+    background-position: center;
+}
+
+
+.custom-float-container {
+    position: relative;
+    z-index: 2;
+    margin-top: 11rem;
+    border-radius: 20px;
+    background-color: #18192d;
+    box-shadow: 6px 10.392px 24px 0 rgba(0,0,0,.25);
+    padding: 50px 60px;
+    margin-top: -6rem;
+
+}
+
+.float-icon-container h2 {
+    font-size: 52px;
+    line-height: 42px;
+    color: white;
+}
+
+.float-icon-container h4 {
+    font-size: 18px;
+    color: #9575DE;
+}
+
+.content-section-three h1{
+    font-size: 60px;
+    line-height: 1.2em;
+    color: white;
+}
+
+.content-section-three span{
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 6px;
+    color: #9575DE;
+}
+
+.overflow-hidden-custom {
+    overflow: hidden;
+    width: 47rem;
+    height: 40rem;
+    max-width: 100%;
+}
+
+@media only screen and (max-width: 767px){
+    .float-icon-container img{
+        display: block;
+        margin-inline: auto;
+    }
+
+    .float-icon-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .custom-float-container {
+        margin-top: 0;
+        border-radius: 0;
+    }
+
+    .overflow-hidden-custom {
+        overflow: hidden;
+        width: 47rem;
+        height: 23rem;
+        max-width: 100%;
+    }
+
+    .content-section-three h1{ 
+        font-size: 30px;
+    }
+    
+}
+
+.section-join { 
+    background-color: #07071B;
+    padding: 10rem 0;
+}
+
+.custom-bg-purple { 
+    /* background: #50207C; */
+    background-image: url('/image/layered-waves-haikei.svg');
+    background-position: 0rem 25rem;
+    background-size: cover;
+    border-radius: 20px;
+    padding: 60px;
+}
+
+.join-custom h2{ 
+    text-transform: uppercase;
+    font-size: 57px;
+    line-height: 60px;
+    color: white;
+}
+
+.join-custom a { 
+    font-size: 18px;
+    font-family: 'Cash Display Medium';
+    color: white;
+    padding: 1rem;
+    background-color: #6c2fff;
+}
+
+.section-join { 
+    position: relative;
+}
+
+.join-custom-img { 
+    position: absolute;
+    bottom: 10rem;
+}
+
+.join-custom-img img{ 
+    display: block;
+    margin-inline: auto;
+    width: 50%;
+    max-width: 100%;
+}
+
+@media only screen and (max-width: 767px) { 
+    
+    .grid-custom-join { 
+        display: grid;
+        grid-template-areas:
+            "positionB"
+            "positionA"
+        ;
+    }
+
+    .join-custom-img {
+        position: unset;
+        grid-area: positionB;
+    }
+
+    .join-custom { 
+        grid-area: positionA;
+    }
+
+    .join-custom-img img{ 
+        width: 100% !important;
+    }
+
+    .custom-bg-purple { 
+        padding: 2rem 1rem;
+    }
+
+    .join-custom h2 {
+        margin-top: 1rem;
+        font-size: 40px;
+        line-height: 41px;
+    }
+}
