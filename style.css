@@ -87,7 +87,7 @@ p {
 
 .section-three {
     margin-top: -5rem;
-    padding: 10rem 0;
+    padding: 15rem 0;
     background-image: url('/image/blob-scene-haikei.svg');
     background-size: cover;
     background-position: center;
@@ -193,6 +193,13 @@ p {
     color: white;
     padding: 1rem;
     background-color: #6c2fff;
+    transition: all .3s;
+}
+
+.join-custom a:hover { 
+    transition: all .3s;
+    color: rgb(204, 204, 204);
+    background-color: #7b43ff;
 }
 
 .section-join { 
@@ -212,7 +219,12 @@ p {
 }
 
 @media only screen and (max-width: 767px) { 
-    
+
+    .section-three { 
+        padding: 10rem 0 5rem;
+    }
+
+
     .grid-custom-join { 
         display: grid;
         grid-template-areas:
@@ -242,5 +254,62 @@ p {
         margin-top: 1rem;
         font-size: 40px;
         line-height: 41px;
+    }
+}
+
+.marquee { 
+    position: relative;
+    background: rgb(91 42 209);
+    color: #eee;
+    padding: 5px 0;
+    text-transform: uppercase;
+    font-size: 60px;
+    display: flex;
+    overflow: hidden;
+}
+
+.marquee__inner { 
+    display: flex;
+    flex-shrink: 0;
+    width: fit-content;
+    flex: auto;
+    flex-direction: row;
+}
+
+.marquee__part { 
+    font-family: 'Cash Display Medium';
+    
+    display: flex;
+    align-items: center;
+    margin: 0 2rem;
+}
+
+.arrow {
+    filter: invert(141%) sepia(0%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
+    width: 60px;
+    height: 60px;
+    margin: 0 1em;
+    transform: rotate(0deg);
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.arrow.active { 
+    transform: rotate(-180deg);
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+
+@media only screen and (max-width: 767px) { 
+    .marquee { 
+        font-size: 40px;
+    }
+
+    .arrow { 
+        width: 30px;
+        height: 30px;
+    }
+
+    .marquee__part { 
+        margin: 0 0rem;
     }
 }
