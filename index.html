@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <script src="https://cdn.tailwindcss.com"></script>
-
      <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="locomotive-scroll.css">
     <title>Kistune</title>
 </head>
-<body>
+<body data-scroll-container>
     <section class="section-banner-one">
         <div class="container mx-auto">
             <div class="grid sm:grid-cols-1 md:grid-cols-2 grid-custom-reverse">
@@ -82,6 +82,72 @@
         </div>
     </section>
 
+    <section class="marquee">
+        <div class="marquee__inner">
+            <div class="marquee__part">
+                KITSUNE 
+                <div class="arrow">
+                    <img src="./image/arrow-83.svg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="marquee__inner">
+            <div class="marquee__part">
+                OFFICIAL 
+                <div class="arrow">
+                    <img src="./image/arrow-83.svg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="marquee__inner">
+            <div class="marquee__part">
+                KITSUNE 
+                <div class="arrow">
+                    <img src="./image/arrow-83.svg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="marquee__inner">
+            <div class="marquee__part">
+                OFFICIAL 
+                <div class="arrow">
+                    <img src="./image/arrow-83.svg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="marquee__inner">
+            <div class="marquee__part">
+                KITSUNE 
+                <div class="arrow">
+                    <img src="./image/arrow-83.svg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="marquee__inner">
+            <div class="marquee__part">
+                OFFICIAL 
+                <div class="arrow">
+                    <img src="./image/arrow-83.svg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="marquee__inner">
+            <div class="marquee__part">
+                KITSUNE 
+                <div class="arrow">
+                    <img src="./image/arrow-83.svg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="marquee__inner">
+            <div class="marquee__part">
+                OFFICIAL 
+                <div class="arrow">
+                    <img src="./image/arrow-83.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section class="section-join">
         <div class="container mx-auto">
@@ -100,5 +166,59 @@
             </div>    
         </div>
     </section>
+
+
+    <script src="locomotive-scroll.min.js"></script>
+    <script>
+        (function () {
+            var scroll = new LocomotiveScroll();
+        })();
+    </script>
+    <script>
+        const scroller = new LocomotiveScroll({
+            el: document.querySelector('[data-scroll-container]'),
+            smooth: true
+        })
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        let currentScroll = window.pageYOffset;
+        let isScrollingDown = true;
+        let arrows = document.querySelectorAll(".arrow")
+
+        let tween = gsap.to(".marquee__part", {
+            xPercent: -200,
+            repeat: -1,
+            duration: 10,
+            ease: "linear",
+        })
+        .totalProgress(0.5)
+
+        gsap.set(".marquee__inner", { xPercent: -50 });
+
+        window.addEventListener("scroll", function () {
+            const scrollDifference = window.pageYOffset - currentScroll;
+            if (scrollDifference > 0) {
+                isScrollingDown = true;
+            } else {
+                isScrollingDown = false;
+            }
+
+            gsap.to(tween, {
+                timeScale: isScrollingDown ? 1 : -1,
+                
+            });
+
+            arrows.forEach((arrow) => {
+                if (isScrollingDown) {
+                    arrow.classList.remove("active");
+                } else {
+                    arrow.classList.add("active");
+                }
+            });
+
+            currentScroll = window.pageYOffset;
+        });
+    </script>
 </body>
 </html>
